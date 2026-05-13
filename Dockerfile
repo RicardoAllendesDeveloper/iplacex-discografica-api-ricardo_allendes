@@ -1,5 +1,5 @@
 # Stage 1: Construcción
-FROM gradle:8.5-jdk17 AS build
+FROM gradle:jdk17 AS build
 WORKDIR /app
 COPY . .
 RUN gradle build -x test --no-daemon
