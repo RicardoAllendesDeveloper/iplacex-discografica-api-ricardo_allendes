@@ -5,7 +5,7 @@ COPY . .
 RUN gradle build -x test
 
 # Stage 2: Ejecución
-FROM openjdk:17
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/build/libs/discografia-1.war app.war
 EXPOSE 8080
