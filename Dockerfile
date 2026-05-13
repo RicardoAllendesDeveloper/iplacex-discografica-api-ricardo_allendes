@@ -7,6 +7,6 @@ RUN gradle build -x test
 # Stage 2: Ejecución
 FROM openjdk:17
 WORKDIR /app
-COPY --from=build /app/build/libs/discografia-1.jar app.jar
+COPY --from=build /app/build/libs/discografia-1.war app.war
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.war"]
